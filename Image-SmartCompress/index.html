@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCompress</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SmartCompress</h1>
+        
+        <div class="controls">
+            <div class="control-item">
+                <label class="file-upload-container" for="imageInput">
+                    <div class="upload-icon">📁</div>
+                    <p>Click or drag image here</p>
+                    <input type="file" id="imageInput" accept="image/*">
+                </label>
+            </div>
+            <div class="control-item">
+                <label for="quality">Quality:</label>
+                <input type="range" id="quality" min="0" max="100" value="75">
+                <span id="qualityValue">75%</span>
+            </div>
+            <div class="control-item">
+                <label for="format">Output Format:</label>
+                <select id="format">
+                    <option value="image/jpeg">JPEG</option>
+                    <option value="image/png">PNG</option>
+                    <option value="image/webp">WebP</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="preview-container">
+            <div class="preview-box">
+                <h3>Original</h3>
+                <img id="originalPreview" class="preview-image">
+                <div id="originalInfo" class="file-info"></div>
+                <div id="originalFilename" class="filename-info"></div>
+            </div>
+            <div class="preview-box">
+                <h3>Compressed</h3>
+                <img id="compressedPreview" class="preview-image">
+                <div id="compressedInfo" class="file-info"></div>
+                <div id="compressedFilename" class="filename-info"></div>
+            </div>
+        </div>
+
+        <button id="downloadBtn" style="display: none;">Download Compressed Image</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
